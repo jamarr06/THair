@@ -6,11 +6,7 @@
   <title>THair AC Services</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, sans-serif;
@@ -28,9 +24,7 @@
       align-items: center;
     }
 
-    header h2 {
-      color: #38bdf8;
-    }
+    header h2 { color: #38bdf8; }
 
     nav a {
       color: white;
@@ -43,7 +37,7 @@
       min-height: 85vh;
       background:
         linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
-        url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80");
+        url("thair-main.png");
       background-size: cover;
       background-position: center;
       color: white;
@@ -52,19 +46,11 @@
       padding: 0 8%;
     }
 
-    .hero-content {
-      max-width: 650px;
-    }
+    .hero-content { max-width: 650px; }
 
-    .hero h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
+    .hero h1 { font-size: 50px; margin-bottom: 20px; }
 
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
+    .hero p { font-size: 20px; margin-bottom: 30px; }
 
     .btn {
       display: inline-block;
@@ -76,19 +62,11 @@
       font-weight: bold;
     }
 
-    section {
-      padding: 70px 8%;
-    }
+    section { padding: 70px 8%; }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+    .section-title { text-align: center; margin-bottom: 40px; }
 
-    .section-title h2 {
-      font-size: 34px;
-      color: #0f172a;
-    }
+    .section-title h2 { font-size: 34px; }
 
     .services {
       display: grid;
@@ -104,10 +82,7 @@
       text-align: center;
     }
 
-    .card h3 {
-      color: #0284c7;
-      margin-bottom: 10px;
-    }
+    .card h3 { color: #0284c7; margin-bottom: 10px; }
 
     .about {
       display: grid;
@@ -131,9 +106,7 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
-    form input,
-    form textarea,
-    form select {
+    form input, form textarea, form select {
       width: 100%;
       padding: 14px;
       margin-bottom: 15px;
@@ -142,10 +115,7 @@
       font-size: 16px;
     }
 
-    form textarea {
-      height: 120px;
-      resize: none;
-    }
+    form textarea { height: 120px; }
 
     form button {
       width: 100%;
@@ -159,10 +129,6 @@
       font-weight: bold;
     }
 
-    form button:hover {
-      background: #0369a1;
-    }
-
     footer {
       background: #0f172a;
       color: white;
@@ -170,128 +136,131 @@
       padding: 25px;
     }
 
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      nav a {
-        margin: 0 8px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
+    /* FWA Section */
+    .fwa {
+      background: #020617;
+      color: white;
     }
+
+    .fwa .card {
+      background: #0f172a;
+      color: white;
+      border: 1px solid #1e293b;
+    }
+
+    .fwa h2 { color: #38bdf8; }
+
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h2>THair AC Services</h2>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#appointment">Appointment</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h2>THair</h2>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#fwa">FWA</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Reliable Air Conditioning Service You Can Trust</h1>
-      <p>We provide AC repair, installation, maintenance, and emergency service for homes and businesses.</p>
-      <a href="#appointment" class="btn">Request Appointment</a>
-    </div>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Reliable Air Conditioning Service</h1>
+    <p>Repair • Installation • Maintenance • Emergency Service</p>
+    <a href="#appointment" class="btn">Request Appointment</a>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
   </div>
 
-  <section id="services">
-    <div class="section-title">
-      <h2>Our Services</h2>
-      <p>Fast, professional, and dependable AC service.</p>
+  <div class="services">
+    <div class="card"><h3>AC Repair</h3></div>
+    <div class="card"><h3>AC Maintenance</h3></div>
+    <div class="card"><h3>AC Installation</h3></div>
+    <div class="card"><h3>Emergency Service</h3></div>
+  </div>
+</section>
+
+<section>
+  <div class="about">
+    <div>
+      <h2>Comfort Starts With a Working AC</h2>
+      <p>We make scheduling AC service simple and reliable.</p>
     </div>
 
-    <div class="services">
-      <div class="card">
-        <h3>AC Repair</h3>
-        <p>We diagnose and repair cooling problems quickly and professionally.</p>
-      </div>
+    <img src="thair-secondary.png" alt="THair Service">
+  </div>
+</section>
 
-      <div class="card">
-        <h3>AC Maintenance</h3>
-        <p>Routine service to keep your system running efficiently.</p>
-      </div>
+<section id="appointment">
+  <div class="section-title">
+    <h2>Request an Appointment</h2>
+  </div>
 
-      <div class="card">
-        <h3>AC Installation</h3>
-        <p>Professional installation for new air conditioning systems.</p>
-      </div>
+  <div class="form-box">
+    <form action="https://formspree.io/f/mqejejea" method="POST">
 
-      <div class="card">
-        <h3>Emergency Service</h3>
-        <p>Need help fast? Submit an appointment request and we will contact you.</p>
-      </div>
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="address" placeholder="Service Address" required>
+
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>AC Repair</option>
+        <option>AC Maintenance</option>
+        <option>AC Installation</option>
+        <option>Emergency Service</option>
+      </select>
+
+      <textarea name="reason" placeholder="Describe the issue" required></textarea>
+      <input type="date" name="preferred_date">
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- FWA SECTION -->
+<section id="fwa" class="fwa">
+  <div class="section-title">
+    <h2>FWA</h2>
+    <p>Fishing With Attitude</p>
+  </div>
+
+  <div class="about">
+    <div>
+      <h2>Custom Fishing Lures</h2>
+      <p>High-quality custom lures and fishing gear.</p>
     </div>
-  </section>
 
-  <section>
-    <div class="about">
-      <div>
-        <h2>Comfort Starts With a Working AC System</h2>
-        <p>
-          THair AC Services helps customers schedule air conditioning service with ease.
-          Whether your AC stopped cooling, needs maintenance, or you need a new installation,
-          we make the appointment process simple.
-        </p>
-      </div>
+    <img src="fwa-main.png" alt="FWA Fishing">
+  </div>
 
-      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="AC technician working">
-    </div>
-  </section>
+  <br><br>
 
-  <section id="appointment">
-    <div class="section-title">
-      <h2>Request an Appointment</h2>
-      <p>Fill out your information and we will contact you to confirm.</p>
-    </div>
+  <div class="services">
+    <div class="card"><h3>Custom Lures</h3></div>
+    <div class="card"><h3>Fishing Gear</h3></div>
+    <div class="card"><h3>Custom Orders</h3></div>
+  </div>
+</section>
 
-    <div class="form-box">
-      <form action="https://formspree.io/f/mqejejea" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact</h2>
+    <p>Phone: (832) 606-0437</p>
+    <p>Email: thair@thairconditioning.com</p>
+  </div>
+</section>
 
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-
-        <input type="text" name="address" placeholder="Service Address" required>
-
-        <select name="service" required>
-          <option value="">Select Service Type</option>
-          <option value="AC Repair">AC Repair</option>
-          <option value="AC Maintenance">AC Maintenance</option>
-          <option value="AC Installation">AC Installation</option>
-          <option value="Emergency Service">Emergency Service</option>
-        </select>
-
-        <textarea name="reason" placeholder="Reason for scheduling / Describe the AC issue" required></textarea>
-
-        <input type="date" name="preferred_date">
-
-        <button type="submit">Submit Appointment Request</button>
-      </form>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-      <p>Phone: (832) 606-0437 </p>
-      <p>Email: thair@thairconditioning.com</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 THair AC Services. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>© 2026 THair AC Services & FWA</p>
+</footer>
 
 </body>
 </html>
