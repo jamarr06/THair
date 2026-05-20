@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>THair AC Services</title>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
       background: #f4f7fb;
       color: #1f2937;
-      line-height: 1.6;
     }
 
     header {
@@ -33,123 +32,126 @@
       font-weight: bold;
     }
 
+    /* HERO */
     .hero {
-      min-height: 85vh;
+      height: 90vh;
       background:
-        linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url("thair-main.png");
       background-size: cover;
       background-position: center;
-      color: white;
       display: flex;
       align-items: center;
       padding: 0 8%;
+      color: white;
     }
 
-    .hero-content { max-width: 650px; }
-
-    .hero h1 { font-size: 50px; margin-bottom: 20px; }
-
-    .hero p { font-size: 20px; margin-bottom: 30px; }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
 
     .btn {
-      display: inline-block;
       background: #38bdf8;
-      color: #0f172a;
-      padding: 14px 28px;
-      border-radius: 8px;
+      color: black;
+      padding: 12px 25px;
       text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 15px;
       font-weight: bold;
     }
 
-    section { padding: 70px 8%; }
+    section { padding: 60px 8%; }
 
-    .section-title { text-align: center; margin-bottom: 40px; }
-
-    .section-title h2 { font-size: 34px; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 20px;
     }
 
     .card {
       background: white;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 25px;
+      border-radius: 10px;
       text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-
-    .card h3 { color: #0284c7; margin-bottom: 10px; }
 
     .about {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
       align-items: center;
     }
 
     .about img {
       width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      border-radius: 12px;
     }
 
+    /* FORM */
     .form-box {
-      background: white;
-      max-width: 700px;
+      max-width: 600px;
       margin: auto;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
     }
 
-    form input, form textarea, form select {
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
       width: 100%;
       padding: 14px;
-      margin-bottom: 15px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    form textarea { height: 120px; }
-
-    form button {
-      width: 100%;
       background: #0284c7;
       color: white;
       border: none;
-      padding: 15px;
-      font-size: 18px;
-      border-radius: 8px;
+      font-size: 16px;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
+    }
+
+    /* FWA */
+    .fwa {
+      background: #020617;
+      color: white;
+    }
+
+    .fwa img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: auto;
     }
 
     footer {
       background: #0f172a;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 20px;
     }
 
-    /* FWA Section */
-    .fwa {
-      background: #020617;
-      color: white;
+    @media(max-width: 800px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
     }
-
-    .fwa .card {
-      background: #0f172a;
-      color: white;
-      border: 1px solid #1e293b;
-    }
-
-    .fwa h2 { color: #38bdf8; }
-
   </style>
 </head>
 
@@ -165,17 +167,19 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-content">
+  <div>
     <h1>Reliable Air Conditioning Service</h1>
-    <p>Repair • Installation • Maintenance • Emergency Service</p>
+    <p>Repair • Installation • Maintenance • Emergency</p>
     <a href="#appointment" class="btn">Request Appointment</a>
   </div>
 </div>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="section-title">
-    <h2>Our Services</h2>
+    <h2>AC Services</h2>
   </div>
 
   <div class="services">
@@ -186,20 +190,22 @@
   </div>
 </section>
 
+<!-- ABOUT -->
 <section>
   <div class="about">
     <div>
       <h2>Comfort Starts With a Working AC</h2>
-      <p>We make scheduling AC service simple and reliable.</p>
+      <p>We make scheduling AC service fast and simple.</p>
     </div>
 
-    <img src="thair-secondary.png" alt="THair Service">
+    <img src="thair-main.png" alt="THair">
   </div>
 </section>
 
+<!-- APPOINTMENT -->
 <section id="appointment">
   <div class="section-title">
-    <h2>Request an Appointment</h2>
+    <h2>Request Appointment</h2>
   </div>
 
   <div class="form-box">
@@ -218,6 +224,7 @@
       </select>
 
       <textarea name="reason" placeholder="Describe the issue" required></textarea>
+
       <input type="date" name="preferred_date">
 
       <button type="submit">Submit Request</button>
@@ -225,21 +232,14 @@
   </div>
 </section>
 
-<!-- FWA SECTION -->
+<!-- FWA -->
 <section id="fwa" class="fwa">
   <div class="section-title">
     <h2>FWA</h2>
     <p>Fishing With Attitude</p>
   </div>
 
-  <div class="about">
-    <div>
-      <h2>Custom Fishing Lures</h2>
-      <p>High-quality custom lures and fishing gear.</p>
-    </div>
-
-    <img src="fwa-main.png" alt="FWA Fishing">
-  </div>
+  <img src="fwa-main.jpeg" alt="Fishing With Attitude">
 
   <br><br>
 
@@ -250,6 +250,7 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-title">
     <h2>Contact</h2>
@@ -259,7 +260,7 @@
 </section>
 
 <footer>
-  <p>© 2026 THair AC Services & FWA</p>
+  <p>© 2026 THair & FWA</p>
 </footer>
 
 </body>
