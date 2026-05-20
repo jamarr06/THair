@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&family=Montserrat:wght@600;800;900&family=Poppins:wght@300;400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +10,9 @@ body {
   background: #f4f7fb;
   color: #111827;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
 }
 
+/* HEADER */
 header {
   height: 80px;
   background: #020617;
@@ -20,17 +21,16 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 8%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .logo {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif; /* ✅ CLEAN FONT */
   font-size: 30px;
   font-weight: 900;
   color: #38bdf8;
-  letter-spacing: 1px;
 }
 
+/* NAV */
 nav a {
   color: white;
   text-decoration: none;
@@ -39,7 +39,6 @@ nav a {
   font-weight: 700;
   padding: 10px 16px;
   border-radius: 999px;
-  transition: 0.3s;
 }
 
 nav a:hover {
@@ -47,6 +46,7 @@ nav a:hover {
   color: #020617;
 }
 
+/* HOME PAGE */
 .home {
   height: calc(100vh - 80px);
   background:
@@ -67,7 +67,6 @@ nav a:hover {
 .hero-text h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 72px;
-  line-height: 1;
   margin-bottom: 20px;
 }
 
@@ -88,6 +87,7 @@ nav a:hover {
   font-weight: 800;
 }
 
+/* GENERAL PAGE */
 .page {
   height: calc(100vh - 80px);
   padding: 60px 8%;
@@ -101,9 +101,9 @@ nav a:hover {
   font-size: 52px;
   margin-bottom: 35px;
   text-align: center;
-  color: #0f172a;
 }
 
+/* SERVICES */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -121,16 +121,15 @@ nav a:hover {
 .card h3 {
   color: #0284c7;
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 10px;
 }
 
+/* FORM */
 .form-box {
   max-width: 650px;
   margin: 0 auto;
   background: white;
   padding: 35px;
   border-radius: 28px;
-  box-shadow: 0 20px 55px rgba(15,23,42,0.14);
 }
 
 input, select, textarea {
@@ -140,12 +139,10 @@ input, select, textarea {
   border-radius: 14px;
   border: 1px solid #cbd5e1;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
 }
 
 textarea {
   height: 110px;
-  resize: none;
 }
 
 button {
@@ -157,9 +154,37 @@ button {
   border-radius: 999px;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  cursor: pointer;
 }
 
+/* 🔥 CONTACT FIX (YOUR MAIN ISSUE) */
+.contact-page {
+  height: calc(100vh - 80px);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-card {
+  background: #f8fafc;
+  max-width: 650px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.contact-card h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #0f172a;
+}
+
+.contact-card p {
+  color: #000000; /* ✅ FIXED TEXT */
+  font-size: 18px;
+}
+
+/* 🔥 FWA STYLE (ONLY HERE) */
 .fwa-body {
   background: #020617;
 }
@@ -176,187 +201,24 @@ button {
 
 .fwa-page img {
   width: 100%;
-  max-height: 620px;
+  max-height: 600px;
   object-fit: contain;
   background: white;
   padding: 20px;
   border-radius: 28px;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
 }
 
 .fwa-page h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 88px;
+  font-family: "Trade Winds", cursive; /* ✅ ONLY HERE */
+  font-size: 80px;
   color: #38bdf8;
 }
 
 .fwa-page h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Trade Winds", cursive; /* ✅ ONLY HERE */
   font-size: 36px;
-  margin-bottom: 20px;
 }
 
 .fwa-page p {
-  font-size: 20px;
   color: #cbd5e1;
-}
-
-.contact-page {
-  text-align: center;
-  background: #0f172a;
-  color: white;
-}
-
-.contact-page h1 {
-  color: #38bdf8;
-}
-
-.contact-page p {
-  font-size: 24px;
-  margin: 10px;
-}
-
-@media(max-width: 900px) {
-  body {
-    overflow: auto;
-  }
-
-  header {
-    height: auto;
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px;
-  }
-
-  .home,
-  .page,
-  .fwa-page {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .grid,
-  .fwa-page {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text h1 {
-    font-size: 44px;
-  }
-}
-.home {
-  height: calc(100vh - 80px);
-  background:
-    linear-gradient(90deg, rgba(2,6,23,0.92), rgba(2,6,23,0.45)),
-    url("thair-main.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 0 8%;
-}
-
-.hero-card {
-  max-width: 680px;
-  background: rgba(2, 6, 23, 0.72);
-  color: white;
-  padding: 45px;
-  border-radius: 30px;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.45);
-  backdrop-filter: blur(8px);
-}
-
-.tagline {
-  color: #38bdf8;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.hero-card h1 {
-  font-size: 62px;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.hero-card p {
-  font-size: 18px;
-  margin-bottom: 25px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.btn.secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid #38bdf8;
-}
-
-.contact-page {
-  height: calc(100vh - 80px);
-  background: radial-gradient(circle at top, #1e293b, #020617 70%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 8%;
-}
-
-.contact-card {
-  background: white;
-  max-width: 650px;
-  width: 100%;
-  padding: 50px;
-  border-radius: 32px;
-  text-align: center;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.35);
-}
-
-.contact-card h1 {
-  font-size: 52px;
-  margin-bottom: 15px;
-  color: #0f172a;
-}
-
-.contact-text {
-  color: #64748b;
-  margin-bottom: 25px;
-}
-
-.contact-info {
-  background: #f1f5f9;
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 25px;
-}
-
-.contact-info p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-.logo,
-.fwa-page h1,
-.fwa-page h2 {
-  font-family: "Trade Winds", cursive;
-  letter-spacing: 2px;
-}
-
-body,
-input,
-select,
-textarea,
-button {
-  font-family: "Poppins", sans-serif;
-}
-
-h1, h2, h3, nav a, .btn {
-  font-family: "Montserrat", sans-serif;
 }
