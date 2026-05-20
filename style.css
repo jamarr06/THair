@@ -304,7 +304,33 @@ button {
   font-size: 20px;
   max-width: 540px;
 }
+.floating-logo {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
 
+  /* makes it look lifted */
+  border-radius: 50%;
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.6),
+    0 0 40px rgba(56,189,248,0.4);
+
+  animation: floatLogo 4s ease-in-out infinite;
+}
+.floating-logo:hover {
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.8),
+    0 0 60px rgba(56,189,248,0.7);
+  transform: scale(1.03);
+}
+
+/* floating animation */
+@keyframes floatLogo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
 /* RESPONSIVE */
 @media(max-width: 950px) {
   body {
