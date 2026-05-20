@@ -71,13 +71,12 @@ nav a:hover {
 /* HOME */
 .home {
   height: calc(100vh - 85px);
-
   background:
-    linear-gradient(90deg, rgba(2,6,23,0.7), rgba(2,6,23,0.2)), /* lighter overlay */
+    linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.35) 38%, rgba(2,6,23,0.05) 100%),
     url("thair-main.png");
-
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
   color: white;
   display: flex;
   align-items: center;
@@ -86,37 +85,28 @@ nav a:hover {
 
 .hero-card,
 .hero-text {
-  max-width: 720px;
-  background: rgba(2, 6, 23, 0.68);
-  padding: 50px;
-  border-radius: 34px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
-  border: 1px solid rgba(56,189,248,0.22);
+  max-width: 520px;
+  background: rgba(2, 6, 23, 0.55);
+  padding: 38px;
+  border-radius: 28px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+  border: 1px solid rgba(56,189,248,0.25);
 }
 
 .hero-card h1,
 .hero-text h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: clamp(38px, 5vw, 58px);
   line-height: 1;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .hero-card p,
 .hero-text p {
-  font-size: 19px;
-  color: #dbeafe;
-  margin-bottom: 15px;
-}
-
-.tagline {
-  color: #38bdf8 !important;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
+  font-size: 18px;
+  color: #e0f2fe;
+  margin-bottom: 14px;
 }
 
 /* GENERAL PAGES */
@@ -219,7 +209,9 @@ button {
 /* CONTACT PAGE */
 .contact-page {
   height: calc(100vh - 85px);
-  background: radial-gradient(circle at top, #1e293b, #020617 72%);
+  background:
+    radial-gradient(circle at top right, rgba(56,189,248,0.28), transparent 35%),
+    linear-gradient(135deg, #020617, #0f172a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,38 +219,44 @@ button {
 }
 
 .contact-card {
-  background: #ffffff;
-  max-width: 700px;
+  background: rgba(255,255,255,0.96);
+  max-width: 780px;
   width: 100%;
   padding: 55px;
   border-radius: 36px;
   text-align: center;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.5);
+  border: 1px solid rgba(56,189,248,0.35);
 }
 
 .contact-card h1 {
   font-family: "Montserrat", sans-serif;
   color: #0f172a;
-  font-size: 54px;
-  margin-bottom: 15px;
+  font-size: 56px;
+  margin-bottom: 12px;
 }
 
 .contact-card p {
-  color: #000000;
+  color: #111827;
   font-size: 19px;
   margin: 12px 0;
 }
 
 .contact-info {
-  background: #f1f5f9;
-  padding: 25px;
-  border-radius: 22px;
-  margin: 25px 0;
+  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+  padding: 28px;
+  border-radius: 24px;
+  margin: 28px 0;
+  border: 1px solid #bae6fd;
 }
 
 .contact-info p,
 .contact-info strong {
   color: #000000 !important;
+}
+
+.contact-card .btn {
+  margin-top: 10px;
 }
 
 /* FWA PAGE */
