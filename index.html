@@ -1,77 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>THair AC Services</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #0f172a;
-            color: white;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THair AC Services</title>
 
-        header {
-            background: #020617;
-            padding: 20px;
-            font-size: 28px;
-            font-weight: bold;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        section {
-            padding: 50px 20px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-        .btn {
-            background: #22c55e;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-        }
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        footer {
-            background: #020617;
-            padding: 20px;
-        }
-    </style>
+    header h2 {
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 85vh;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+        url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #0f172a;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #0284c7;
+      margin-bottom: 10px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .form-box {
+      background: white;
+      max-width: 700px;
+      margin: auto;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    form button {
+      width: 100%;
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #0369a1;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    THair AC Services
-</header>
+  <header>
+    <h2>THair AC Services</h2>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#appointment">Appointment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section>
-    <h1>Fast & Reliable Air Conditioning Service</h1>
-    <p>Repair • Installation • Maintenance</p>
-</section>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Reliable Air Conditioning Service You Can Trust</h1>
+      <p>We provide AC repair, installation, maintenance, and emergency service for homes and businesses.</p>
+      <a href="#appointment" class="btn">Request Appointment</a>
+    </div>
+  </div>
 
-<section>
-    <h2>Our Services</h2>
-    <p>✔ AC Repair</p>
-    <p>✔ AC Installation</p>
-    <p>✔ Maintenance & Tune-Ups</p>
-    <p>✔ Emergency Service</p>
-</section>
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Fast, professional, and dependable AC service.</p>
+    </div>
 
-<section>
-    <h2>Book an Appointment</h2>
-    <p>Click below to schedule your service</p>
+    <div class="services">
+      <div class="card">
+        <h3>AC Repair</h3>
+        <p>We diagnose and repair cooling problems quickly and professionally.</p>
+      </div>
 
-    <a href="https://calendly.com/yourname/ac-service" class="btn">Book Now</a>
-</section>
+      <div class="card">
+        <h3>AC Maintenance</h3>
+        <p>Routine service to keep your system running efficiently.</p>
+      </div>
 
-<section>
-    <h2>Contact</h2>
-    <p>📞 (956) 000-0000</p>
-    <p>📧 youremail@example.com</p>
-</section>
+      <div class="card">
+        <h3>AC Installation</h3>
+        <p>Professional installation for new air conditioning systems.</p>
+      </div>
 
-<footer>
-    © 2026 THair AC Services
-</footer>
+      <div class="card">
+        <h3>Emergency Service</h3>
+        <p>Need help fast? Submit an appointment request and we will contact you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="about">
+      <div>
+        <h2>Comfort Starts With a Working AC System</h2>
+        <p>
+          THair AC Services helps customers schedule air conditioning service with ease.
+          Whether your AC stopped cooling, needs maintenance, or you need a new installation,
+          we make the appointment process simple.
+        </p>
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="AC technician working">
+    </div>
+  </section>
+
+  <section id="appointment">
+    <div class="section-title">
+      <h2>Request an Appointment</h2>
+      <p>Fill out your information and we will contact you to confirm.</p>
+    </div>
+
+    <div class="form-box">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <input type="text" name="address" placeholder="Service Address" required>
+
+        <select name="service" required>
+          <option value="">Select Service Type</option>
+          <option value="AC Repair">AC Repair</option>
+          <option value="AC Maintenance">AC Maintenance</option>
+          <option value="AC Installation">AC Installation</option>
+          <option value="Emergency Service">Emergency Service</option>
+        </select>
+
+        <textarea name="reason" placeholder="Reason for scheduling / Describe the AC issue" required></textarea>
+
+        <input type="date" name="preferred_date">
+
+        <button type="submit">Submit Appointment Request</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Phone: (956) 000-0000</p>
+      <p>Email: youremail@example.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 THair AC Services. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
