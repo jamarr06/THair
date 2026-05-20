@@ -342,3 +342,21 @@ button {
   font-size: 18px;
   margin: 10px 0;
 }
+.logo,
+.fwa-page h1,
+.fwa-page h2 {
+  font-family: "Trade Winds", cursive;
+  letter-spacing: 2px;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, nav a, .btn {
+  font-family: "Montserrat", sans-serif;
+}
