@@ -1,273 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THair</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  overflow: hidden; /* 🔥 disables scrolling */
-}
-
-/* HEADER */
-header {
-  height: 75px;
-  background: #020617;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 8%;
-}
-
-.logo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: #38bdf8;
-}
-
-nav button {
-  background: transparent;
-  border: none;
-  color: white;
-  margin-left: 18px;
-  font-family: "Montserrat";
-  font-weight: 700;
-  cursor: pointer;
-  padding: 10px 14px;
-  border-radius: 999px;
-}
-
-nav button.active,
-nav button:hover {
-  background: #38bdf8;
-  color: #020617;
-}
-
-/* PAGE SYSTEM */
-.page {
-  display: none;
-  height: calc(100vh - 75px);
-  width: 100%;
-}
-
-.page.active {
-  display: flex;
-}
-
-/* HOME */
-.home {
-  background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url("thair-main.png");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  align-items: center;
-  padding: 0 8%;
-}
-
-.home h1 {
-  font-family: "Montserrat";
-  font-size: 60px;
-  margin-bottom: 20px;
-}
-
-.home p {
-  font-size: 20px;
-  max-width: 500px;
-  margin-bottom: 20px;
-}
-
-.btn {
-  padding: 14px 26px;
-  background: #38bdf8;
-  border: none;
-  border-radius: 999px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* SERVICES */
-.services {
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: #f1f5f9;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 220px);
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* FORM */
-.appointment {
-  justify-content: center;
-  align-items: center;
-  background: #e0f2fe;
-}
-
-.form-box {
-  width: 400px;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-}
-
-input, textarea, select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-button.submit {
-  width: 100%;
-  padding: 12px;
-  background: #0284c7;
-  color: white;
-  border: none;
-  border-radius: 999px;
-}
-
-/* FWA */
-.fwa {
-  background: #020617;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-
-.fwa img {
-  width: 350px;
-  margin-right: 40px;
-  border-radius: 20px;
-  background: white;
-  padding: 10px;
-}
-
-.fwa-content {
-  max-width: 400px;
-}
-
-/* CONTACT */
-.contact {
-  justify-content: center;
-  align-items: center;
-  background: #0f172a;
-  color: white;
-  flex-direction: column;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THair</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<body class="home-page">
 
 <header>
   <div class="logo">THair</div>
-
   <nav>
-    <button class="tab active" onclick="showPage('home', this)">Home</button>
-    <button class="tab" onclick="showPage('services', this)">Services</button>
-    <button class="tab" onclick="showPage('appointment', this)">Appointment</button>
-    <button class="tab" onclick="showPage('fwa', this)">FWA</button>
-    <button class="tab" onclick="showPage('contact', this)">Contact</button>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="fwa.html">FWA</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<!-- HOME -->
-<div id="home" class="page home active">
-  <div>
+<main class="home">
+  <div class="hero-text">
     <h1>Reliable AC Service</h1>
-    <p>Fast scheduling for repair, maintenance, and installation.</p>
-    <button class="btn" onclick="showPage('appointment', document.querySelectorAll('.tab')[2])">
-      Book Now
-    </button>
+    <p>Fast scheduling for repair, maintenance, installation, and emergency service.</p>
+    <a class="btn" href="appointment.html">Request Appointment</a>
   </div>
-</div>
-
-<!-- SERVICES -->
-<div id="services" class="page services">
-  <h2 style="margin-bottom:20px;">AC Services</h2>
-  <div class="grid">
-    <div class="card">AC Repair</div>
-    <div class="card">Maintenance</div>
-    <div class="card">Installation</div>
-    <div class="card">Emergency</div>
-  </div>
-</div>
-
-<!-- APPOINTMENT -->
-<div id="appointment" class="page appointment">
-  <div class="form-box">
-    <form action="https://formspree.io/f/mqejejea" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-      <input type="text" name="address" placeholder="Address" required>
-
-      <select name="service" required>
-        <option>Select Service</option>
-        <option>Repair</option>
-        <option>Maintenance</option>
-        <option>Installation</option>
-      </select>
-
-      <textarea name="reason" placeholder="Describe issue"></textarea>
-
-      <button class="submit">Submit</button>
-    </form>
-  </div>
-</div>
-
-<!-- FWA -->
-<div id="fwa" class="page fwa">
-  <img src="fwa-main.jpeg">
-  <div class="fwa-content">
-    <h1>FWA</h1>
-    <p>Fishing With Attitude — custom baits and gear.</p>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="page contact">
-  <h2>Contact</h2>
-  <p>(832) 606-0437</p>
-  <p>thair@thairconditioning.com</p>
-</div>
-
-<script>
-function showPage(id, btn) {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-  btn.classList.add("active");
-}
-</script>
+</main>
 
 </body>
 </html>
