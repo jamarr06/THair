@@ -71,9 +71,11 @@ nav a:hover {
 /* HOME */
 .home {
   height: calc(100vh - 85px);
+
   background:
-    linear-gradient(90deg, rgba(2,6,23,0.94), rgba(2,6,23,0.45)),
+    linear-gradient(90deg, rgba(2,6,23,0.7), rgba(2,6,23,0.2)), /* lighter overlay */
     url("thair-main.png");
+
   background-size: cover;
   background-position: center;
   color: white;
