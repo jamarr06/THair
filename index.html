@@ -2,41 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>THair AC Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THair | AC Services & FWA</title>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
+      background: #f8fafc;
+      color: #111827;
+      line-height: 1.6;
     }
 
     header {
-      background: #0f172a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(12px);
       color: white;
-      padding: 20px 8%;
+      padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
     }
 
-    header h2 { color: #38bdf8; }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #38bdf8;
+    }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      margin-left: 24px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s;
     }
 
-    /* HERO */
+    nav a:hover {
+      color: #38bdf8;
+    }
+
     .hero {
-      height: 90vh;
+      min-height: 92vh;
       background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(90deg, rgba(2,6,23,0.92), rgba(2,6,23,0.55)),
         url("thair-main.png");
       background-size: cover;
       background-position: center;
@@ -46,110 +67,316 @@
       color: white;
     }
 
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.15);
+      color: #7dd3fc;
+      padding: 8px 14px;
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
     .hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 560px;
+      color: #dbeafe;
+      margin-bottom: 32px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      background: #38bdf8;
-      color: black;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 6px;
       display: inline-block;
-      margin-top: 15px;
-      font-weight: bold;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.3s;
     }
 
-    section { padding: 60px 8%; }
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.45);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: #0284c7;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      margin-top: 8px;
+      color: #0f172a;
+    }
+
+    .section-title p {
+      color: #64748b;
+      margin-top: 10px;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
     }
 
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.08);
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(15,23,42,0.14);
+    }
+
+    .card h3 {
+      color: #0284c7;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #64748b;
     }
 
     .about {
+      background: #0f172a;
+      color: white;
+      border-radius: 32px;
+      padding: 55px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 45px;
       align-items: center;
+      overflow: hidden;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
     }
 
     .about img {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
     }
 
-    /* FORM */
+    .form-section {
+      background: #eef6ff;
+    }
+
     .form-box {
-      max-width: 600px;
+      max-width: 760px;
       margin: auto;
       background: white;
-      padding: 30px;
-      border-radius: 12px;
+      padding: 42px;
+      border-radius: 26px;
+      box-shadow: 0 20px 55px rgba(15,23,42,0.12);
+      border: 1px solid #dbeafe;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #0f172a;
     }
 
     input, textarea, select {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      font-size: 16px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 4px rgba(56,189,248,0.18);
+    }
+
+    textarea {
+      height: 130px;
+      resize: none;
     }
 
     button {
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       background: #0284c7;
       color: white;
       border: none;
-      font-size: 16px;
-      border-radius: 6px;
+      font-size: 17px;
+      border-radius: 999px;
       cursor: pointer;
+      font-weight: 800;
+      transition: 0.3s;
     }
 
-    /* FWA */
+    button:hover {
+      background: #0369a1;
+      transform: translateY(-2px);
+    }
+
     .fwa {
-      background: #020617;
+      background: radial-gradient(circle at top, #1e293b, #020617 65%);
       color: white;
+    }
+
+    .fwa .section-title h2,
+    .fwa .section-title span {
+      color: white;
+    }
+
+    .fwa .section-title p {
+      color: #cbd5e1;
+    }
+
+    .fwa-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
     }
 
     .fwa img {
       width: 100%;
-      max-width: 500px;
-      display: block;
-      margin: auto;
+      border-radius: 28px;
+      background: white;
+      padding: 18px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+    }
+
+    .fwa-text h3 {
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .fwa-text p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .fwa-cards {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 18px;
+    }
+
+    .fwa-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 22px;
+      border-radius: 18px;
+    }
+
+    .contact {
+      text-align: center;
+      background: white;
+    }
+
+    .contact-box {
+      display: inline-block;
+      background: #0f172a;
+      color: white;
+      padding: 34px 45px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.2);
+    }
+
+    .contact-box h2 {
+      margin-bottom: 12px;
+      color: #38bdf8;
     }
 
     footer {
-      background: #0f172a;
-      color: white;
+      background: #020617;
+      color: #94a3b8;
       text-align: center;
-      padding: 20px;
+      padding: 24px;
+      font-size: 14px;
     }
 
-    @media(max-width: 800px) {
-      .about {
-        grid-template-columns: 1fr;
+    @media(max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 14px;
       }
 
-      .hero h1 {
-        font-size: 32px;
+      nav a {
+        margin: 8px;
+        display: inline-block;
+      }
+
+      .about,
+      .fwa-layout {
+        grid-template-columns: 1fr;
+        padding: 35px;
+      }
+
+      .hero {
+        text-align: left;
       }
     }
   </style>
@@ -158,7 +385,7 @@
 <body>
 
 <header>
-  <h2>THair</h2>
+  <div class="logo">THair</div>
   <nav>
     <a href="#services">Services</a>
     <a href="#appointment">Appointment</a>
@@ -167,100 +394,152 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-  <div>
-    <h1>Reliable Air Conditioning Service</h1>
-    <p>Repair • Installation • Maintenance • Emergency</p>
-    <a href="#appointment" class="btn">Request Appointment</a>
+  <div class="hero-content">
+    <div class="badge">Air Conditioning • Service • Repair</div>
+    <h1>Reliable AC Service When You Need It Most.</h1>
+    <p>Fast appointment requests for AC repair, maintenance, installation, and emergency service.</p>
+
+    <div class="btn-row">
+      <a href="#appointment" class="btn btn-primary">Request Appointment</a>
+      <a href="#fwa" class="btn btn-outline">View FWA</a>
+    </div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="section-title">
-    <h2>AC Services</h2>
+    <span>What We Do</span>
+    <h2>Professional AC Services</h2>
+    <p>Simple scheduling, reliable service, and clear communication.</p>
   </div>
 
   <div class="services">
-    <div class="card"><h3>AC Repair</h3></div>
-    <div class="card"><h3>AC Maintenance</h3></div>
-    <div class="card"><h3>AC Installation</h3></div>
-    <div class="card"><h3>Emergency Service</h3></div>
+    <div class="card">
+      <h3>AC Repair</h3>
+      <p>For systems that are not cooling, leaking, freezing, or making unusual noise.</p>
+    </div>
+
+    <div class="card">
+      <h3>Maintenance</h3>
+      <p>Routine service to help keep your AC system efficient and dependable.</p>
+    </div>
+
+    <div class="card">
+      <h3>Installation</h3>
+      <p>Schedule installation service for new or replacement air conditioning systems.</p>
+    </div>
+
+    <div class="card">
+      <h3>Emergency Service</h3>
+      <p>Submit a request and we will contact you as soon as possible.</p>
+    </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section>
   <div class="about">
     <div>
-      <h2>Comfort Starts With a Working AC</h2>
-      <p>We make scheduling AC service fast and simple.</p>
+      <h2>Comfort Starts With a Working AC.</h2>
+      <p>
+        THair makes it easy for customers to request air conditioning service without confusion.
+      </p>
+      <p>
+        Submit your name, phone number, service address, and reason for scheduling so we can review your request and contact you.
+      </p>
     </div>
 
-    <img src="thair-main.png" alt="THair">
+    <img src="thair-main.png" alt="THair Air Conditioning">
   </div>
 </section>
 
-<!-- APPOINTMENT -->
-<section id="appointment">
+<section id="appointment" class="form-section">
   <div class="section-title">
-    <h2>Request Appointment</h2>
+    <span>Schedule Service</span>
+    <h2>Request an Appointment</h2>
+    <p>Fill out the form and we will contact you to confirm details.</p>
   </div>
 
   <div class="form-box">
     <form action="https://formspree.io/f/mqejejea" method="POST">
+      <label>Full Name</label>
+      <input type="text" name="name" placeholder="Enter your full name" required>
 
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="address" placeholder="Service Address" required>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" placeholder="Enter your phone number" required>
 
+      <label>Service Address</label>
+      <input type="text" name="address" placeholder="Enter service address" required>
+
+      <label>Service Type</label>
       <select name="service" required>
-        <option value="">Select Service</option>
+        <option value="">Select service type</option>
         <option>AC Repair</option>
         <option>AC Maintenance</option>
         <option>AC Installation</option>
         <option>Emergency Service</option>
       </select>
 
-      <textarea name="reason" placeholder="Describe the issue" required></textarea>
+      <label>Reason for Scheduling</label>
+      <textarea name="reason" placeholder="Briefly describe the AC issue or service needed" required></textarea>
 
+      <label>Preferred Date</label>
       <input type="date" name="preferred_date">
 
-      <button type="submit">Submit Request</button>
+      <button type="submit">Submit Appointment Request</button>
     </form>
   </div>
 </section>
 
-<!-- FWA -->
 <section id="fwa" class="fwa">
   <div class="section-title">
-    <h2>FWA</h2>
-    <p>Fishing With Attitude</p>
+    <span>Fishing With Attitude</span>
+    <h2>FWA Custom Baits</h2>
+    <p>Custom fishing lures and gear with attitude.</p>
   </div>
 
-  <img src="fwa-main.jpeg" alt="Fishing With Attitude">
+  <div class="fwa-layout">
+    <img src="fwa-main.jpeg" alt="FWA Fishing With Attitude">
 
-  <br><br>
+    <div class="fwa-text">
+      <h3>Built for anglers who fish different.</h3>
+      <p>
+        FWA is the fishing side of the brand, focused on custom baits, lure designs, and fishing products with personality.
+      </p>
+      <p>
+        For custom lure questions, availability, or special requests, contact us directly.
+      </p>
 
-  <div class="services">
-    <div class="card"><h3>Custom Lures</h3></div>
-    <div class="card"><h3>Fishing Gear</h3></div>
-    <div class="card"><h3>Custom Orders</h3></div>
+      <div class="fwa-cards">
+        <div class="fwa-card">
+          <h4>Custom Lures</h4>
+          <p>Designed with style and purpose.</p>
+        </div>
+
+        <div class="fwa-card">
+          <h4>Fishing Gear</h4>
+          <p>Products for serious fishing days.</p>
+        </div>
+
+        <div class="fwa-card">
+          <h4>Custom Orders</h4>
+          <p>Ask about availability and requests.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-title">
-    <h2>Contact</h2>
+<section id="contact" class="contact">
+  <div class="contact-box">
+    <h2>Contact THair</h2>
     <p>Phone: (832) 606-0437</p>
     <p>Email: thair@thairconditioning.com</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 THair & FWA</p>
+  <p>© 2026 THair & FWA. All rights reserved.</p>
 </footer>
 
 </body>
